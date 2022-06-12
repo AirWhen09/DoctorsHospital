@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <link href="https://media.glassdoor.com/sqll/121258/doctors-hospital-of-laredo-squarelogo-1535690874483.png" rel="icon">
+
+    <title>Patient Registration</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS v5.2.0-beta1 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"  integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/registration.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
+  </head>
+  <body>
+    <div class="container col-xl-7 float-start p-3">
+      <a href="#" class="navbar-brand "><img class="img-fluid custom-logo" src="https://www.doctorshosplaredo.com/sites/doctorshosplaredo.com/files/DoctorsLaredo-logo-retina.png" alt=""></a>
+      <a href="index.html" class="btn border-warning float-end"><i class="bi bi-box-arrow-right"></i> Logout</a>
+    </div>
+    
+    <br>
+    <div class="container shadow-lg rounded-5 p-4 col-xl-7 float-start mx-3 mt-2">
+      <form action="" name="registration" id="registration">
+
+        <h4>Patient Form</h4><hr>
+        <h6>Personal Information</h6>
+
+        <div class="row mt-2">
+            <div class="col-lg-4">
+                <div class="mb-3">
+                  <label for="fname" class="form-label">First Name <span class="text-danger">*</span></label>
+                  <input type="text" class="form-control" name="fname" id="fname"  placeholder="Type Here...">
+                  <small></small>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="mb-3">
+                  <label for="mname" class="form-label">Midle Name</label>
+                  <input type="text" class="form-control" name="mname" id="mname"  placeholder="Type Here...">
+                  <small></small>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="mb-3">
+                  <label for="lname" class="form-label">Last Name <span class="text-danger">*</span></label>
+                  <input type="text" class="form-control" name="lname" id="lname"  placeholder="Type Here...">
+                  <small></small>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+                <div class="mb-3">
+                  <label for="address" class="form-label">Address <span class="text-danger">*</span></label>
+                  <input type="text" class="form-control" name="address" id="address"  placeholder="Type Here...">
+                  <small></small>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row mt-2">
+            <div class="col-lg-4">
+                <div class="mb-3">
+                  <label for="contact" class="form-label">Mobile Number <span class="text-danger">*</span></label>
+                  <input type="tel" class="form-control" name="contact" id="contact"  placeholder="91234567891">
+                  <small id=""></small>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="mb-3">
+                  <label for="bday" class="form-label">Birth Date <span class="text-danger">*</span></label>
+                  <input type="date" class="form-control" name="bday" id="bday"  placeholder="Type Here...">
+                  <small></small>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <label for="gender" class="form-label" id="myGender">Gender <span class="text-danger">* &nbsp;</span></label>
+                <small id="notif-gender"></small> <br>
+                <div class="form-check form-check-inline mt-1">
+                    <input class="form-check-input" type="radio" name="gender" id="male" value="Male" selected>
+                    <label class="form-check-label" for="male">Male</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="gender" id="female" value="Female">
+                    <label class="form-check-label" for="female">Female</label>
+                </div><br>
+                
+            </div>
+        </div>
+        <hr>
+        <h6>Medical Information</h6>
+
+        <div class="row">
+            <div class="col-lg-6">
+                <label for="history" class="form-label">Medical History <span class="text-danger">*</span></label>
+                <small id="notif-mdHistory"></small>
+                <div class="row">
+                  <div class="col-lg-6">
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" name="mdHistory" id="Asthma" value="Asthma">
+                      <label class="form-check-label" for="Asthma">Asthma</label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" name="mdHistory" id="Diabetes" value="Diabetes">
+                      <label class="form-check-label" for="Diabetes">Diabetes</label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" name="mdHistory" id="CardiacDecease" value="Cardiac Decease">
+                      <label class="form-check-label" for="CardiacDecease">Cardiac Decease</label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" name="mdHistory" id="Hypertension" value="Hypertension">
+                      <label class="form-check-label" for="Hypertension">Hypertension</label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" name="mdHistory" id="PsychiatricDisorder" value="Psychiatric Disorder">
+                      <label class="form-check-label" for="PsychiatricDisorder">Psychiatric Disorder</label>
+                    </div>
+                  </div>
+                  <div class="col-lg-6">
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" name="mdHistory" id="Cancer" value="Cancer">
+                      <label class="form-check-label" for="Cancer">Cancer</label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" name="mdHistory" id="Epilepsy" value="Epilepsy">
+                      <label class="form-check-label" for="Epilepsy">Epilepsy</label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" name="mdHistory" id="Others" value="Others">
+                      <label class="form-check-label" for="Others">Others</label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" name="mdHistory" id="None" value="None">
+                      <label class="form-check-label" for="None">None</label>
+                    </div>
+                    <textarea name="" class="form-control hide" id="" ></textarea>
+                  </div>
+                </div>
+                 
+            </div>
+            <div class="col-lg-3">
+              <div class="mb-3">
+                <label for="symptoms" class="form-label">Current Symptoms</label>
+                <select multiple class="form-select" name="symptoms" id="symptoms" aria-label="symptoms">
+                  <option value="Chest Pain">Chest Pain</option>
+                  <option value="Respiratory">Respiratory</option>
+                  <option value="Hematological">Hematological</option>
+                  <option value="Lymphatic">Lymphatic</option>
+                </select>
+                <small></small>
+              </div>
+            </div>
+            <div class="col-lg-3">
+              <label for="medication" class="form-label">Are You Taking Medication? <span class="text-danger">*</span></label>
+              <br><small id="notif-medication"></small> <br>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="medication" id="Yes" value="Yes">
+                <label class="form-check-label" for="Yes">Yes</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="medication" id="No" value="No">
+                <label class="form-check-label" for="No">No</label>
+              </div>
+              
+              <small></small>
+            </div>
+            
+            <div class="row mt-4">
+              <div class="col-6 d-grid">
+                <button class="btn border-danger" type="reset" id="btnReset">Reset</button>
+              </div>
+              <div class="col-6 d-grid">
+                <button class="btn border-success" type="submit" id="btnSubmit">Submit</button>
+              </div>
+            </div>
+        </div>
+      </form>  
+     </div>
+    <!-- Bootstrap JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy" crossorigin="anonymous"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="js/registration.js"></script>
+  </body>
+</html>

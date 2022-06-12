@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Result</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS v5.2.0-beta1 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"  integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/result.css">
+    <link rel="stylesheet" href="css/main.css">
+  </head>
+  <body>
+    <div class="container-fluid d-flex flex-row-reverse">
+      <a href="index.html" class="navbar-brand"><img class="img-fluid custom-logo" src="https://www.doctorshosplaredo.com/sites/doctorshosplaredo.com/files/DoctorsLaredo-logo-retina.png" alt=""></a>
+    </div>
+    <div class="container shadow-lg rounded-5 col-xl-8 float-end p-4 ml-3 mt-5">
+      <p>Name: <b id="name"></b></p>
+      <p>Address: <b id="address"></b></p>
+      <p>Gender: <b id="gender"></b></p>
+      <p>Birth Date: <b id="bday"></b></p>
+      <p>Contact: <b id="contact"></b></p>
+      <p>Medical History: <b id="mdHistory"></b></p>
+      <p>Current Symptoms: <b id="symptoms"></b></p>
+      <p>Medication: <b id="medication"></b></p>
+    </div>
+    <!-- Bootstrap JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy" crossorigin="anonymous"></script>
+    
+    <script>
+      window.onload = () => {
+        
+        let patientRecord = JSON.parse(localStorage.getItem('Patient'));
+
+        patientRecord.forEach(patient => {
+          document.getElementById('name').textContent = patient.name;
+          document.getElementById('address').textContent = patient.address;
+          document.getElementById('gender').textContent = patient.gender;
+          document.getElementById('bday').textContent = patient.bday;
+          document.getElementById('contact').textContent = patient.contact;
+          document.getElementById('mdHistory').textContent = patient.history;
+          document.getElementById('symptoms').textContent = patient.symptoms;
+          document.getElementById('medication').textContent = patient.medication;
+        });
+      }
+    </script>
+  
+  </body>
+</html>

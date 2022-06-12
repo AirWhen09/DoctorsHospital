@@ -1,0 +1,31 @@
+body {
+  background-image: url("https://myhearcare.com/wp-content/uploads/2016/12/95414a_8199abe2d9a646c8b2c36b7807b0b61d-mv2_d_2800_1867_s_2.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: Yu Gothic UI;
+}
+
+.bg-custom-header {
+  height: 100vh;
+}
+
+.custom-logo {
+  width: auto;
+  height: 50px;
+  margin: 20px;
+}
+
+.bg-custom-gradient > a {
+  font-weight: bold;
+  -webkit-transition: width 2s;
+  transition: width 2s;
+  border-radius: 40px;
+  -webkit-transition-timing-function: ease;
+          transition-timing-function: ease;
+}
+
+.bg-custom-gradient > a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  border-radius: 40px;
+}

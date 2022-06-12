@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <link href="https://media.glassdoor.com/sqll/121258/doctors-hospital-of-laredo-squarelogo-1535690874483.png" rel="icon">
+    <title>Home</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS v5.2.0-beta1 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"  integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/main.css">
+  </head>
+  <body>
+      <header class="bg-custom-header">
+      <a href="#" class="navbar-brand "><img class="img-fluid custom-logo" src="https://www.doctorshosplaredo.com/sites/doctorshosplaredo.com/files/DoctorsLaredo-logo-retina.png" alt=""></a>
+       
+        <br>
+       <div class="container shadow-lg mt-5 col-sm-5 float-start offset-1 rounded-5">
+            <div class="container justify-content-center">
+                <h2 class="text-center pt-3">LOGIN</h2>
+                <form action="patientRegistration.html" class="p-3 d-grid">
+                    <div class="mb-3">
+                      <label for="email" class="form-label">Email</label>
+                      <input type="email" class="form-control " name="email" id="email" placeholder="YourEmail@email.com">
+                      <small id="emailError" class="form-text"></small>
+                    </div>
+
+                    <div class="mb-3">
+                      <label for="password" class="form-label">Password</label>
+                      <input type="password" class="form-control" name="password" id="password" placeholder="Your Password">
+                      <small id="passlError" class="form-text"></small>
+                      
+                    </div>
+
+                    <div class="form-check mb-3">
+                      <input class="form-check-input" type="checkbox" value="remember" id="remember">
+                      <label class="form-check-label" for="remember">
+                        Remember Me
+                      </label>
+                    </div>
+
+                    <button type="submit" id="submitBtn" class="btn border-success mb-4">Submit</button>
+                </form>
+            </div>
+        </div>
+    </header>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy" crossorigin="anonymous"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    
+    <script>
+      window.onload = function (){
+        let submitBtn = document.querySelector('#submitBtn');
+        let email = document.querySelector('#email');
+        let password = document.querySelector('#password');
+
+
+        submitBtn.addEventListener('click', function (e){
+          e.preventDefault();
+
+          let emailValid = isEmailValid(email.value);
+          let passValid = isPassValid(password.value);
+          let userValid = emailValid && passValid;
+
+          if(emailValid == false){
+            showError(email, 'Please enter valid email.');
+          }else{
+            showSuccess(email);
+          }
+
+          if(passValid == false){
+            showError(password, 'Invalid Password.');
+          }else{
+            showSuccess(password);
+          }
+
+          if(userValid){
+            Swal.fire({
+              position: 'top-end',
+              icon: 'success',
+              title: 'Welcome',
+              showConfirmButton: false,
+              timer: 1500
+            })
+            setTimeout(timeOuts, 1000);
+            
+          }
+        });
+
+        let timeOuts = () => window.location = 'patientRegistration.html';
+
+        const showError = (input, message) => {
+            // get the form-field element
+            const formField = input.parentElement;
+            
+            
+            // show the error message
+            const inputBorder = formField.querySelector('input');
+            // add the error class
+            inputBorder.classList.remove('border-success');
+            inputBorder.classList.add('border-danger');
+
+            const error = formField.querySelector('small');
+            error.classList.add('text-danger');
+            error.classList.remove('text-success');
+            error.textContent = message;
+           
+            Swal.fire({
+              position: 'center',
+              icon: 'error',
+              title: 'Invalid Email or Password',
+              showConfirmButton: false,
+              timer: 1500
+            })
+        };
+
+        const showSuccess = (input) => {
+            // get the form-field element
+            const formField = input.parentElement;
+
+            // show the error message
+            const inputBorder = formField.querySelector('input');
+            // add the error class
+            inputBorder.classList.remove('border-danger');
+            inputBorder.classList.add('border-success');
+
+            // hide the error message
+            const error = formField.querySelector('small');
+            error.classList.remove('text-danger');
+            error.classList.add('text-success');
+            error.textContent = 'Looks Good';
+        }
+
+        const isEmailValid = (email) => {
+            const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+            return re.test(email);
+        };
+
+        const isPassValid = (pass) => {
+            if(pass === ''){
+              return false
+            }else if(pass.length < 6){
+              return false
+            }else{
+              return true;
+            }
+        };
+
+      }
+
+      
+
+    </script>
+  
+  </body>
+</html>
